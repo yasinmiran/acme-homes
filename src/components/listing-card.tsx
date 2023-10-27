@@ -1,6 +1,6 @@
 export default function ListingCard() {
     return (
-        <div className="bg-white max-w-md shadow-md rounded-xl p-4 py-6">
+        <div className="bg-white lg:max-w-4xl shadow-md rounded-xl p-4 pt-5">
             <div className="flex gap-x-4 justify-between">
                 <div>
                     <h3 className="font-bold font-sans">Santa Cruz, California</h3>
@@ -16,7 +16,13 @@ export default function ListingCard() {
                 </div>
             </div>
             <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"/>
-            <div>
+            <div className="flex gap-x-4 justify-between">
+                <div>
+                    Total
+                </div>
+                <div>
+                    $ 2000
+                </div>
             </div>
         </div>
     );

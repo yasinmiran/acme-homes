@@ -13,6 +13,8 @@ export default {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        import('@tailwindcss/aspect-ratio'),
+    ],
 }
 

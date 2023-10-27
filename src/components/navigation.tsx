@@ -2,6 +2,7 @@ import { Fragment, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon } from '@heroicons/react/24/outline'
 import { fetchAirBnBListings } from "../api/listings.ts";
+import { GrHomeRounded } from "react-icons/gr";
 
 export default function Navigation() {
 
@@ -14,15 +15,14 @@ export default function Navigation() {
 
     return (
         <Disclosure as="nav" className="bg-white shadow">
-            <div className="mx-auto px-2 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl px-4">
                 <div className="relative flex h-16 justify-between">
                     <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
                         <div className="flex flex-shrink-0 items-center">
-                            <img
-                                className="h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                alt="Your Company"
-                            />
+                            <div className="flex space-x-2 justify-center items-center">
+                                <GrHomeRounded/>
+                                <p>ACME Homes</p>
+                            </div>
                         </div>
                     </div>
                     <div
