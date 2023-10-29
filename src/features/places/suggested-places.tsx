@@ -10,6 +10,10 @@ export default function SuggestedPlaces() {
         queryFn: fetchSuggestedPlaces,
     });
 
+    /**
+     * @see NearbyStays component for an explanation
+     * for these if conditions.
+     */
     if (status === 'pending') {
         return <span>Loading...</span>
     }
