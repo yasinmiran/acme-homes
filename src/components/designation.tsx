@@ -1,4 +1,4 @@
-import * as classNames from "classnames";
+import classNames from "classnames";
 
 export type Designation = "USUALLY_BOOKED" | "LOW_RATE" | "NONE";
 
