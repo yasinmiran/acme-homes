@@ -36,7 +36,7 @@ export default function UserProfile() {
                     <Menu.Item>
                         <div className="flex items-center justify-between">
                             <a href="#" className="text-dark-gray underline font-bold">View profile</a>
-                            <button className="px-4 py-2 bg-dark-blue text-white rounded-3xl text-sm font-bold">
+                            <button className="px-4 py-2 bg-dark-blue text-white rounded-3xl text-sm font-bold hover:bg-dark-blue/75">
                                 Sign out
                             </button>
                         </div>
