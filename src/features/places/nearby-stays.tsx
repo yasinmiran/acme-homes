@@ -78,8 +78,7 @@ export default function NearbyStays() {
                 <div className="flex space-x-2">
                     <Button
                         disabled={ page === 0 }
-                        onClick={ onPreviousClick }
-                        secondary>
+                        onClick={ onPreviousClick }>
                         Previous
                     </Button>
                     <Button onClick={ onNextClick }>Next</Button>
