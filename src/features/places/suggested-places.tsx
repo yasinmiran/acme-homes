@@ -2,7 +2,6 @@ import ListingCard from "../../components/listing-card.tsx";
 import { fetchSuggestedPlaces } from "../../api/listings.ts";
 import { useQuery } from "@tanstack/react-query";
 import { Listing } from "../../models/listing.ts";
-import { Fragment } from "react";
 
 export default function SuggestedPlaces() {
 
@@ -20,7 +19,7 @@ export default function SuggestedPlaces() {
     }
 
     return (
-        <Fragment>
+        <div>
             <h4 className="text-xl tracking-tight text-gray-800">
                 Places You Might Like
             </h4>
@@ -29,7 +28,7 @@ export default function SuggestedPlaces() {
                     <ListingCard key={ id } model={ listing }/>
                 )) }
             </div>
-        </Fragment>
+        </div>
     );
 
 }

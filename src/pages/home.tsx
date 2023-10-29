@@ -15,9 +15,8 @@ export default function Home() {
                         </h1>
                     </div>
                 </header>
-                <main className=" mx-auto px-4 py-8 max-w-7xl">
+                <main className="flex flex-col gap-y-10 mx-auto px-4 py-8 max-w-7xl">
                     <SuggestedPlaces/>
-                    <div className="py-6"></div>
                     <NearbyStays/>
                 </main>
             </div>

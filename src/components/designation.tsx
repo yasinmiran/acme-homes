@@ -27,7 +27,7 @@ export default function Designation({ designation, className }: DesignationProps
     return (
         <span
             className={ classNames(
-                "p-1.5 border rounded-lg text-xs md:text-sm h-fit w-fit",
+                "p-1.5 border rounded-lg text-xs lg:text-sm h-fit w-fit",
                 {
                     "bg-light-blue border border-dark-blue": designation === "USUALLY_BOOKED",
                     "bg-light-purple border border-dim-purple": designation === "LOW_RATE"

@@ -1,7 +1,7 @@
 import ListingCard from "../../components/listing-card.tsx";
 import { fetchNearbyStays } from "../../api/listings.ts";
 import { Listing } from "../../models/listing.ts";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import Button from "../../components/button.tsx";
 
@@ -59,7 +59,7 @@ export default function NearbyStays() {
     }
 
     return (
-        <Fragment>
+        <div>
             <h4 className="text-xl tracking-tight text-gray-800">
                 Nearby Stays
             </h4>
@@ -71,7 +71,7 @@ export default function NearbyStays() {
             <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
             <div className="flex justify-between">
                 <div>
-                    <p>{ getCurrentRangeText() }</p>
+                    <p className="text-gray-600 text-sm">{ getCurrentRangeText() }</p>
                 </div>
                 <div className="flex space-x-2">
                     <Button
@@ -83,7 +83,7 @@ export default function NearbyStays() {
                     <Button onClick={ onNextClick }>Next</Button>
                 </div>
             </div>
-        </Fragment>
+        </div>
     );
 
 }

@@ -15,12 +15,12 @@ export default function ListingCard({ model }: ListingCardProps) {
     };
 
     return (
-        <div
-            className="bg-white lg:max-w-4xl shadow-md rounded-xl p-4 pt-5 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:cursor-pointer">
+        <div className="bg-white lg:max-w-4xl shadow-md rounded-xl p-4 pt-5 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:cursor-pointer relative">
             <div className="flex gap-x-4 justify-between">
                 <div className="flex flex-col space-y-2">
+                    <Designation designation={ model.designation } className="lg:hidden absolute top-0 left-0 rounded-bl-none rounded-tr-none px-1.5 py-0.5 text-xs"/>
                     <h6 className="font-light text-xs hidden">{ model.id }</h6>
-                    <h3 className="font-bold">{ model.location }</h3>
+                    <h3 className="font-bold sm:mt-4">{ model.location }</h3>
                     <div>
                         <p className="text-slate-500 text-sm">
                             { normalizeString() }
@@ -31,7 +31,7 @@ export default function ListingCard({ model }: ListingCardProps) {
                     </div>
                 </div>
                 <div className="flex space-x-2">
-                    <Designation designation={ model.designation }/>
+                    <Designation designation={ model.designation } className="hidden lg:block"/>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={ 1.5 }
                          stroke="currentColor"
                          className="w-6 h-6 mt-1.5 transition-colors duration-300 hover:text-red-500">
@@ -41,7 +41,7 @@ export default function ListingCard({ model }: ListingCardProps) {
                 </div>
             </div>
             <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"/>
-            <div className="flex gap-x-4 justify-between">
+            <div className="flex gap-x-4 justify-between text-gray-600">
                 <div>
                     Total
                 </div>
@@ -51,4 +51,5 @@ export default function ListingCard({ model }: ListingCardProps) {
             </div>
         </div>
     );
+
 }

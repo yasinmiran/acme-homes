@@ -8,7 +8,7 @@ export function toListingModel(obj: Record<string, unknown>): Listing {
         bathrooms: obj.bathrooms,
         bedrooms: obj.bedrooms,
         designation: "USUALLY_BOOKED",
-        price: 2000
+        price: obj.price || 786.42
     } as Listing;
 }
 
