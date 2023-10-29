@@ -1,4 +1,4 @@
-import { assignDesignations, toListingModel } from "../utility";
+import { assignDesignations, assignFavourites, toListingModel } from "../utility";
 
 const API = 'https://public.opendatasoft.com/api/explore/v2.1';
 
@@ -16,6 +16,7 @@ export const fetchAirBnBListings = async (
         const res = (await response.json());
         res.results = res.results.map(toListingModel);
         assignDesignations(res.results);
+        assignFavourites(res.results);
         return res;
     } catch (error) {
         console.error("There was a problem fetching the data:", error);

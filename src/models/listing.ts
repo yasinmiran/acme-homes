@@ -8,4 +8,5 @@ export interface Listing {
     available_dates: string;
     designation: Designation;
     price: number;
+    favourite: boolean;
 }

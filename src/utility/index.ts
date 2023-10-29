@@ -32,3 +32,16 @@ export function assignDesignations(models: Listing[]): Listing[] {
     }
     return models;
 }
+
+export function assignFavourites(models: Listing[]): Listing[] {
+    const indicesToAssign = getRandomIndices(2, models.length);
+    // First, ensure all models have the 'favourite' property set to false
+    for (const model of models) {
+        model.favourite = false;
+    }
+    // Then, set the 'favourite' property to true for the randomly selected models
+    for (const index of indicesToAssign) {
+        models[index].favourite = true;
+    }
+    return models;
+}
