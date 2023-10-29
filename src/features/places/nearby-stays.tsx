@@ -13,7 +13,26 @@ export default function NearbyStays() {
 
     /**
      * useQuery hook to fetch nearby stays based on the current page.
+     * React Query's `useQuery` is highly efficient for paginated requests:
      *
+     * Why I used this hook?
+     *
+     * 1. **Caching**: Automatically caches query results, reducing
+     * redundant network requests.
+     *
+     * 2. **Stale Data Handling**: Re fetches data in the background, ensuring fresh data
+     * while displaying cached data instantly.
+     *
+     * 3. **Placeholder Data**: Displays cached data as placeholders during new data
+     * fetches, offering a smooth user experience.
+     *
+     * 4. **Disk Cache**: Experimentally supports persisting cache to disk,
+     * retaining data across browser sessions.
+     *
+     * These features optimize network usage and enhance user experience,
+     * especially for paginated data. I referred the guide linked below.
+     *
+     * @link https://tanstack.com/query/latest/docs/react/guides/paginated-queries
      * @returns {Object} Contains properties like error, status, data, and isPlaceholderData.
      * - error: Any errors that occurred during the query.
      * - status: The status of the query (e.g., 'pending', 'error').
@@ -32,6 +51,9 @@ export default function NearbyStays() {
     })
 
     useEffect(() => {
+        /**
+         * Sets the total items we have.
+         */
         if (data) {
             setTotalItems(data.total_count)
         }
@@ -44,7 +66,7 @@ export default function NearbyStays() {
      * @returns {string} A string indicating the range of items being displayed.
      * For example: "Showing 1-6 of 25".
      */
-    const getCurrentRangeText = () => {
+    const getCurrentRangeText = (): string => {
         // Adding +1 to page because we start the offset from 0.
         const start = ((page + 1) - 1) * maxItems + 1;
         let end = (page + 1) * maxItems;
