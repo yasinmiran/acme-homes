@@ -3,6 +3,7 @@ import NearbyStays from "../features/places/nearby-stays.tsx";
 import SuggestedPlaces from "../features/places/suggested-places.tsx";
 
 export default function Home() {
+
     return (
         <div className="min-h-full">
             <Navigation/>

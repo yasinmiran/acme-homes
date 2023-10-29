@@ -25,10 +25,11 @@ export default function SuggestedPlaces() {
                 Places You Might Like
             </h4>
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                { data?.map((listing: Listing, id: number) => (
+                { data?.results.map((listing: Listing, id: number) => (
                     <ListingCard key={ id } model={ listing }/>
                 )) }
             </div>
         </Fragment>
-    )
+    );
+
 }
