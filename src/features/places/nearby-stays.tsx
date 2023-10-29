@@ -77,7 +77,7 @@ export default function NearbyStays() {
                 </div>
                 <div className="flex space-x-2">
                     <Button
-                        disabled={ page == 0 }
+                        disabled={ page === 0 }
                         onClick={ onPreviousClick }
                         secondary>
                         Previous
