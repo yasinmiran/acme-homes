@@ -1,7 +1,12 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
-export default function UserProfile() {
+export interface UserProfileProps {
+    name: string;
+    email: string;
+}
+
+export default function UserProfile({ name, email }: UserProfileProps) {
     return (
         <Menu as="div" className="relative ml-3">
             <div>
@@ -11,7 +16,9 @@ export default function UserProfile() {
                     <span className="sr-only">Open user menu</span>
                     <img
                         className="h-10 w-10 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src={ encodeURI(
+                            `https://ui-avatars.com/api/?background=474747&color=fff&name=${ name }`
+                        ) }
                         alt="Profile Photo"
                     />
                 </Menu.Button>
@@ -29,8 +36,8 @@ export default function UserProfile() {
                     className="absolute right-0 z-[50] mt-2 w-80 origin-top-right rounded-xl bg-white p-4 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none flex flex-col gap-y-4">
                     <Menu.Item>
                         <div className="flex flex-col space-y-1">
-                            <p className="font-bold text-dark-gray">Jane Smith</p>
-                            <p className="text-dim-gray text-sm">jane.smith@me.com</p>
+                            <p className="font-bold text-dark-gray">{ name }</p>
+                            <p className="text-dim-gray text-sm">{ email }</p>
                         </div>
                     </Menu.Item>
                     <Menu.Item>
