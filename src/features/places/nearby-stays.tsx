@@ -71,7 +71,9 @@ export default function NearbyStays() {
             <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
             <div className="flex justify-between">
                 <div>
-                    <p className="text-gray-600 text-sm">{ getCurrentRangeText() }</p>
+                    <p className="text-gray-600 text-sm">
+                        { getCurrentRangeText() }
+                    </p>
                 </div>
                 <div className="flex space-x-2">
                     <Button
